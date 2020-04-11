@@ -1,0 +1,30 @@
+.searchBar {
+    width: 75vw;
+    padding: 10px;
+    height: auto;
+    margin: auto;
+}
+
+.control {
+    margin-left: 15px;
+}
+
+.mainBody {
+    background: lightblue url("https://images.pexels.com/photos/2147029/pexels-photo-2147029.jpeg?cs=srgb&dl=people-inside-building-during-nighttime-2147029.jpg&fm=jpg") no-repeat fixed center;
+    background-size: cover;
+    background-position: bottom;
+    height: 80vh;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.event-details {
+    padding: 50px;
+}
+
+footer {
+    height: auto;
+}
