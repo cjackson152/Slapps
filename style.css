@@ -1,8 +1,9 @@
-.searchBar {
+.searchCard {
     width: 75vw;
     padding: 10px;
     height: auto;
     margin: auto;
+    background-color: rgba(212, 179, 148, 0.8);
 }
 
 .control {
@@ -10,7 +11,7 @@
 }
 
 .mainBody {
-    background: lightblue url("https://images.pexels.com/photos/2147029/pexels-photo-2147029.jpeg?cs=srgb&dl=people-inside-building-during-nighttime-2147029.jpg&fm=jpg") no-repeat fixed center;
+    background: lightblue url("https://www.wallpaperflare.com/static/940/311/672/concert-crowd-audience-people-wallpaper-preview.jpg") no-repeat fixed center;
     background-size: cover;
     background-position: bottom;
     height: 80vh;
@@ -19,6 +20,18 @@
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
+}
+.webpage-guide {
+    background-color: #3e759e;
+    color: whitesmoke;
+    margin: 2rem;
+}
+.webpage-guide h3 {
+    color: whitesmoke;
+}
+
+ .panel-heading{
+    background-color: rgba(212, 179, 148, 0.8) ;
 }
 
 .event-details {
