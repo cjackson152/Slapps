@@ -5,6 +5,10 @@ currentYear = today.getFullYear();
 selectYear = document.getElementById("year");
 selectMonth = document.getElementById("month");
 
+//variables for popup on date
+popup = $("#modal");
+closeModal = document.querySelector(".closeModal")
+
 //Month Names for display
 months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
 
@@ -35,8 +39,17 @@ function choose() {
 
 // function to click tds through calendar
 $(document).on('click', 'td', function(){
-    console.log($(this))
+    $('.modal-title').text($(this).text())
+    $('.modal-body').text($(this).attr('data-todo'))
+    $('.modal').attr('style', 'display:block');
+    $('.modal').addClass('show')
 })
+
+$(document).on('click', '.close', function(){
+    $('.modal').attr('style', 'display:none');
+    $('.modal').removeClass('show')
+})
+
 
 
 //generates calendar
@@ -66,6 +79,7 @@ for (let a = 0; a < 7; a++) {
         cell = document.createElement("td");
         cellText = document.createTextNode("");
         cell.appendChild(cellText);
+        cell.setAttribute('data-todo', 'testing123')
         row.appendChild(cell);
     }
     else if (date > daysInMonth(month, year)) {
@@ -74,6 +88,7 @@ for (let a = 0; a < 7; a++) {
     else {
         cell = document.createElement("td");
         cellText = document.createTextNode(date);
+        cell.setAttribute('data-todo', 'testing123')
         if (date === today.getDate() && year === today.getFullYear() && month === today.getMonth()){
             cell.classList.add("bg-info");
         }
