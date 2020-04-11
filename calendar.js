@@ -39,7 +39,9 @@ function choose() {
 
 // function to click tds through calendar
 $(document).on('click', 'td', function(){
-    $('.modal-title').text((currentMonth +1) + "/" + $(this).text() + "/" + currentYear)
+    $('.modal-title').text((currentMonth + 1) + "/" + $(this).text() + "/" + currentYear + " " + "Event Title")
+    $('.modal-venue').text("placeholder for Venue")
+    $('.modal-location').text("placeholder for location")
     $('.modal-body').text($(this).attr('data-todo'))
     $('.modal').attr('style', 'display:block');
     $('.modal').addClass('show')
@@ -53,7 +55,23 @@ $(document).on('click', '.close', function(){
 $(document).on('click', '.removeEvent', function(){
 })
 
+$(document).on('click', '.addEvent', function(){
+    let modalTitle = prompt("please enter a event name")    
+    if (modalTitle == null || modalTitle =='') {
+        txt = "cancelled";
 
+    }else {
+        txt = "created";
+    }
+
+    let modalBody = prompt("please enter info") 
+        if (modalBody == null || modalBody == '') {
+            txt = "cancelled";
+        } else {
+            txt = "created"
+        }
+    }
+)
 //generates calendar
 function showCalendar(month, year) {
 
