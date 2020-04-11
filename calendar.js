@@ -39,7 +39,7 @@ function choose() {
 
 // function to click tds through calendar
 $(document).on('click', 'td', function(){
-    $('.modal-title').text($(this).text())
+    $('.modal-title').text(currentMonth + "/" + $(this).text() + "/" + currentYear)
     $('.modal-body').text($(this).attr('data-todo'))
     $('.modal').attr('style', 'display:block');
     $('.modal').addClass('show')
