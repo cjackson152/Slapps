@@ -39,7 +39,7 @@ function choose() {
 
 // function to click tds through calendar
 $(document).on('click', 'td', function(){
-    $('.modal-title').text(currentMonth + "/" + $(this).text() + "/" + currentYear)
+    $('.modal-title').text((currentMonth +1) + "/" + $(this).text() + "/" + currentYear)
     $('.modal-body').text($(this).attr('data-todo'))
     $('.modal').attr('style', 'display:block');
     $('.modal').addClass('show')
@@ -50,6 +50,8 @@ $(document).on('click', '.close', function(){
     $('.modal').removeClass('show')
 })
 
+$(document).on('click', '.removeEvent', function(){
+})
 
 
 //generates calendar
@@ -61,7 +63,7 @@ tbl = document.getElementById("calendar-body");
 
 tbl.innerHTML = "";
 
-monthAndYear.innerHTML = months[month] + " " + year;
+monthAndYear.innerHTML = (months[month]) + " " + year;
 selectYear.value = year;
 selectMonth.value = month;
 
@@ -79,7 +81,7 @@ for (let a = 0; a < 7; a++) {
         cell = document.createElement("td");
         cellText = document.createTextNode("");
         cell.appendChild(cellText);
-        cell.setAttribute('data-todo', 'testing123')
+        cell.setAttribute('data-todo', 'example')
         row.appendChild(cell);
     }
     else if (date > daysInMonth(month, year)) {
@@ -88,7 +90,7 @@ for (let a = 0; a < 7; a++) {
     else {
         cell = document.createElement("td");
         cellText = document.createTextNode(date);
-        cell.setAttribute('data-todo', 'testing123')
+        cell.setAttribute('data-todo', 'example')
         if (date === today.getDate() && year === today.getFullYear() && month === today.getMonth()){
             cell.classList.add("bg-info");
         }
