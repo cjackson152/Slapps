@@ -40,11 +40,11 @@ function choose() {
 // function to click tds through calendar
 $(document).on('click', 'td', function(){
     $('.modal-title').text((currentMonth + 1) + "/" + $(this).text() + "/" + currentYear + " " + "Event Title")
-    $('.modal-venue').text("placeholder for Venue")
-    $('.modal-location').text("placeholder for location")
-    $('.modal-body').text($(this).attr('data-todo'))
+    $('.modal-venue').text("placeholder for Venue");
+    $('.modal-location').text("placeholder for location");
+    $('.modal-body').text($(this).attr('data-todo'));
     $('.modal').attr('style', 'display:block');
-    $('.modal').addClass('show')
+    $('.modal').addClass('show');
 })
 
 $(document).on('click', '.close', function(){
@@ -53,25 +53,20 @@ $(document).on('click', '.close', function(){
 })
 
 $(document).on('click', '.removeEvent', function(){
+    $('.modal-venue').text("placeholder for Venue");
+    $('.modal-location').text("placeholder for location");
+    $('.modal-body').text($(this).attr('data-todo'));
+    $('.modal').attr('style', 'display:block');
+    $('.modal').addClass('show');
 })
 
 $(document).on('click', '.addEvent', function(){
-    let modalTitle = prompt("please enter a event name")    
-    if (modalTitle == null || modalTitle =='') {
-        txt = "cancelled";
+    $('.eventTitle').text(prompt("Whats the Event?"));
+    $('.modal-venue').text(prompt("Whats the Venue name?"));
+    $('.modal-location').text(prompt("Wheres it at?"));
+    $('.modal-body').text(prompt("What are you doing?"));
+})
 
-    }else {
-        txt = "created";
-    }
-
-    let modalBody = prompt("please enter info") 
-        if (modalBody == null || modalBody == '') {
-            txt = "cancelled";
-        } else {
-            txt = "created"
-        }
-    }
-)
 //generates calendar
 function showCalendar(month, year) {
 
@@ -109,6 +104,8 @@ for (let a = 0; a < 7; a++) {
         cell = document.createElement("td");
         cellText = document.createTextNode(date);
         cell.setAttribute('data-todo', 'example')
+        
+        //this is the code that causes the highlighting didnt realize it was still here
         if (date === today.getDate() && year === today.getFullYear() && month === today.getMonth()){
             cell.classList.add("bg-info");
         }
