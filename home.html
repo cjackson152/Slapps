@@ -23,14 +23,37 @@
       <!--Search-->
       <section class="mainBody">
         <div class="field is-grouped searchBar">
-         <input class="input is-rounded" type="text" placeholder="Rounded input">
+         <input class="input is-rounded" id="artist-input" type="text" placeholder="Enter Artist/Event Name">
          <div class="control">
-           <button class="button is-primary">Submit</button>
+           <button class="button is-primary searchBtn">Submit</button>
          </div>
         </div>
      </section>
 
      <section class="searchResults">
+      <div class="columns">
+            <div class="column" id="artist-upcoming">
+              <p class="bd-notification is-info"></p>
+            </div>
+          </div>
+        </div>
+        <div class="column">
+          <div class="columns is-mobile">
+            <div class="column is-half" id="artist-event">
+              <p class="bd-notification is-danger">Country</p>
+            </div>
+            <div class="column" id="artist-venue">
+              <p class="bd-notification is-danger">Venue</p>
+            </div>
+            <div class="column" id="artist-date">
+              <p class="bd-notification is-danger">Date</p>
+            </div>
+            <div class="column" id="saveBtn">
+              <p class="bd-notification is-danger">Save</p>
+            </div>
+          </div>
+        </div>
+      </div>
          <!--Search Results Go Here-->
      </section>
      
@@ -44,6 +67,7 @@
         </div>
       </footer>
 
-  <script src="script.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="search.js"></script>
   </body>
 </html>
