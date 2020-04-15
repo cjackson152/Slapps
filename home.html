@@ -24,7 +24,7 @@
 
   <!--Search-->
   <div class="tile is-parent mainBody">
-    <article class="tile is-child notification is-5 searchCard">
+    <article class="tile is-child notification is-6 searchCard">
       <h3 class="title">Search For Events</h3>
 
       <div class="field">
@@ -67,37 +67,41 @@
             <input class="input is-rounded is-warning is-small" type="number" min="0" name="min" placeholder="Min">
             <input class="input is-rounded is-warning is-small" type="number" min="0" name="max" placeholder="Max">
           </div>
+<<<<<<< HEAD
         </div>
       </div>
 
+=======
+>>>>>>> 7c2380c2dde529d206a7230c216aa8d5f4dcbdf4
 
-      <div class="field">
-        <label class="label">Date</label>
-        <div class="control select">
-          <select class="input is-warning" name="date" type="text">
-            <option>Any</option>
-            <option>January</option>
-            <option>Feburary</option>
-            <option>March</option>
-            <option>April</option>
-            <option>May</option>
-            <option>June</option>
-            <option>July</option>
-            <option>August</option>
-            <option>September</option>
-            <option>October</option>
-            <option>November</option>
-            <option>December</option>
-          </select>
-        </div>
-      </div>
+          <div class="field">
+            <label class="label">Date</label>
+            <div class="control select">
+              <select class="input is-warning" name="date" type="text">
+                <option>Any</option>
+                <option>January</option>
+                <option>Feburary</option>
+                <option>March</option>
+                <option>April</option>
+                <option>May</option>
+                <option>June</option>
+                <option>July</option>
+                <option>August</option>
+                <option>September</option>
+                <option>October</option>
+                <option>November</option>
+                <option>December</option>
+              </select>
+            </div>
+          </div>
 
-      <div class="field is-grouped">
-        <div class="control">
-          <button class="button is-link is-warning">Let see what's poppin'</button>
-        </div>
+          <div class="field is-grouped">
+            <div class="control">
+              <button class="button is-link is-warning">Let see what's poppin'</button>
+            </div>
     </article>
   </div>
+  <!--END OF SEARCH -->
 
   <div class="hero tile is-parent  webpage-guide">
 
@@ -134,59 +138,61 @@
     </div>
   </div>
 
-  <section class="searchResults">
-    <!--Search Results Go Here-->
-    <article class="panel ">
-      <p class="panel-heading">
-       Here's What We Found
-      </p>
+  <!--Search Results Go Here-->
+  <article class="panel ">
+    <p class="panel-heading">
+      Here's What We Found
+    </p>
+    <section class="searchResults">
+      <div class="columns">
+        <div class="column" id="artist-upcoming">
+          <p class="bd-notification is-info"></p>
+        </div>
+      </div>
+      </div>
+      <div class="column">
+        <div class="columns is-mobile">
+          <div class="column is-one-quarter" id="artist-venue">
+            <p class="bd-notification is-danger">Venue</p>
+          </div>
+          <div class="column" id="artist-country">
+            <p class="bd-notification is-danger">Location</p>
+          </div>
+          <div class="column" id="artist-date">
+            <p class="bd-notification is-danger">Date</p>
+          </div>
+          <div class="column" id="saveBtnCol">
+            <p class="bd-notification is-danger">Save</p>
+          </div>
+        </div>
+      </div>
+      <!--Search Results Go Here-->
+    </section>
 
-      <div class="panel-block">
-        <!-- search result -->
+    <nav class="pagination is-centered" role="navigation" aria-label="pagination">
+      <a class="pagination-previous">Previous</a>
+      <a class="pagination-next">Next page</a>
+      <ul class="pagination-list">
+        <li><a class="pagination-link is-current">1</a></li>
+        <li><a class="pagination-link">2</a></li>
+        <li><a class="pagination-link">3</a></li>
+        <li><a class="pagination-link">4</a></li>
+        <li><a class="pagination-link">5</a></li>
+        <li><span class="pagination-ellipsis">&hellip;</span></li>
+        <li><a class="pagination-link" aria-label="Goto page 86">10</a></li>
+      </ul>
+    </nav>
 
-        <a class="panel-block">
-          <!-- search result -->
-        </a>
+    <!--Footer-->
+    <footer class="footer">
+      <div class="content has-text-centered">
+        <p>
+          <strong>Slapps Music Event</strong> 2020
+        </p>
+      </div>
+    </footer>
 
-        <a class="panel-block">
-          <!-- search result -->
-
-        </a>
-
-        <a class="panel-block">
-          <!-- search result -->
-        </a>
-
-        <a class="panel-block">
-          <!-- search result -->
-    </article>
-
-  </section>
-
-  <nav class="pagination is-centered" role="navigation" aria-label="pagination">
-    <a class="pagination-previous">Previous</a>
-    <a class="pagination-next">Next page</a>
-    <ul class="pagination-list">
-      <li><a class="pagination-link is-current">1</a></li>
-      <li><a class="pagination-link">2</a></li>
-      <li><a class="pagination-link">3</a></li>
-      <li><a class="pagination-link">4</a></li>
-      <li><a class="pagination-link">5</a></li>
-      <li><span class="pagination-ellipsis">&hellip;</span></li>
-      <li><a class="pagination-link" aria-label="Goto page 86">10</a></li>
-    </ul>
-  </nav>
-
-  <!--Footer-->
-  <footer class="footer">
-    <div class="content has-text-centered">
-      <p>
-        <strong>Slapps Music Event</strong> 2020
-      </p>
-    </div>
-  </footer>
-
-  <script src="script.js"></script>
+    <script src="script.js"></script>
 </body>
 
 </html>
