@@ -40,8 +40,8 @@ function choose() {
 // function to click tds through calendar
 $(document).on('click', 'td', function(){
     $('.modal-title').text((currentMonth + 1) + "/" + $(this).text() + "/" + currentYear);
-    $('.modal-venue').text("placeholder for Venue");
-    $('.modal-location').text("placeholder for location");
+    $('.modal-venue').text("");
+    $('.modal-location').text("");
     $('.modal-body').text($(this).attr('data-todo'));
     $('.modal').attr('style', 'display:block');
     $('.modal').addClass('show');
@@ -54,6 +54,7 @@ $(document).on('click', '.close', function(){
 })
 
 $(document).on('click', '.removeEvent', function(){
+    $('.eventTitle').text("")
     $('.modal-venue').text("");
     $('.modal-location').text("");
     $('.modal-body').text("");
@@ -67,52 +68,6 @@ $(document).on('click', '.createEvent', function(){
     $('.modal-body').text(prompt("What are you doing?"));
     
 })
-    /*let eventTitle = prompt("please enter a event name")    
-    if (eventTitle == null || eventTitle =='') {
-        txt = "cancelled";
-
-    }else {
-        txt = "created";
-        localStorage.setItem(this, "eventTitle")
-    };
-
-    let modalLocation = prompt("please enter in location")
-    if (modalLocation == null || modalLocation == '') {
-        txt = "undefined";
-    } else {
-        txt = "location Added"
-        localStorage.setItem( this, "modalLocation")
-    };
-
-    let modalVenue = prompt("please enter in the venue")
-    if (modalVenue == null || modalVenue == '') {
-        txt = "undefined";
-    } else {
-        txt = "Venue Added"
-        localStorage.setItem(this, "modalVenue")
-    };
-
-    let modalBody = prompt("please enter info") 
-        if (modalBody == null || modalBody == '') {
-            txt = "cancelled";
-        } else {
-            txt = "created"
-            localStorage.setItem(this, "modalBody")
-        };
-    let confirmation = confirm("Would you like to save this event?")
-    if (confirmation == null || confirmation == 'cancelled') {
-        txt = "Event not Created"
-    } else {
-        txt = "New Event Created"
-        function fillData() {
-            document.querySelector(".eventTitle").innerHTML = eventTitle;
-            document.querySelector(".modalLocation").innerHTML = modalLocation;
-            document.querySelector(".modalVenue").innerHTML = modalVenue;
-            document.querySelector(".modalBody").innerHTML = modalBody;
-        }
-    }
-    }
-)*/
 //generates calendar
 function showCalendar(month, year) {
 
@@ -140,7 +95,7 @@ for (let a = 0; a < 7; a++) {
         cell = document.createElement("td");
         cellText = document.createTextNode("");
         cell.appendChild(cellText);
-        cell.setAttribute('data-todo', 'example')
+        cell.setAttribute('data-todo', '')
         row.appendChild(cell);
     }
     else if (date > daysInMonth(month, year)) {
@@ -149,7 +104,7 @@ for (let a = 0; a < 7; a++) {
     else {
         cell = document.createElement("td");
         cellText = document.createTextNode(date);
-        cell.setAttribute('data-todo', 'example')
+        cell.setAttribute('data-todo', '')
         
         //this is the code that causes the highlighting didnt realize it was still here
         if (date === today.getDate() && year === today.getFullYear() && month === today.getMonth()){
