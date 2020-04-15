@@ -1,6 +1,8 @@
 
 function artistResult(artist) {
-    var queryURL = "https://rest.bandsintown.com/artists/" + artist + "/events?app_id=codingbootcamp&date=past";
+
+    // to change to upcoming events change date=upcoming, for all date=all, for past date=past
+    var queryURL = "https://rest.bandsintown.com/artists/" + artist + "/events?app_id=codingbootcamp&date=upcoming";
     // var queryURL = "https://rest.bandsintown.com/artists/" + artist + "?app_id=codingbootcamp";
 
     $.ajax({
@@ -18,9 +20,11 @@ function artistResult(artist) {
         
         $("#artist-upcoming").empty();
         $("#artist-upcoming").append(artistName)
+
         let arr = [];
         // first start from array of most recently ended events
         for (var i = response.length - 1; i > 0; i--) {
+            // if (Array)
 
                 if (i === response.length - 10) { break; }
                 arr.push(response[i]);
@@ -39,9 +43,8 @@ function artistResult(artist) {
                 $("#artist-venue").append(venueCol)
                 $("#artist-date").append(dateCol)
             }
-            // break out of outer loop when 10 events acquired
-
-console.log("arr: ", arr);
+            
+            console.log("arr: ", arr);
       });
     }
 
