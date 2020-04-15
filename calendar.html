@@ -1,107 +1,117 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Calendar</title>
 
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css"
-          integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
+<head>
+  <meta charset="UTF-8">
+  <title>Calendar</title>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css"
+    integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
 
 </head>
+
 <body>
-<div class="container col-sm-4 col-md-7 col-lg-4 mt-5">
+
+  <div class="container col-sm-4 col-md-7 col-lg-4 mt-5">
+
     <div class="card">
-        <div class="modal fade" style='display:none' tabindex="-1" role="dialog">
-            <div class="modal-dialog" role="document">
-              <div class="modal-content">
-                <div class="modal-header">
-                  <h5 class="modal-title">Modal title</h5>
-                  <h5 class="eventTitle"></h5>
-                  <h6 class="modal-venue">Venue:</h6>
-                  <h6 class="modal-location">Location</h6>
-                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                  </button>
-                </div>
-                <div class="modal-body">
-                  <p class="modalText">Modal body text goes here.</p>
-                </div>
-                <div class="modal-footer">
-                  <button type="button" class="btn btn-primary createEvent">Add Event</button>
-                  <button type="button" class="btn btn-primary removeEvent">Remove Event</button>
-                  <button type="button" class="btn btn-secondary close" data-dismiss="modal">Close</button>
-                </div>
-              </div>
+      <!-- MODAL -->
+      <div class="modal fade" style='display:none' tabindex="-1" role="dialog">
+        <div class="modal-dialog" role="document">
+
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title">Modal title</h5>
+              <h5 class="eventTitle"></h5>
+              <h6 class="modal-venue">Venue:</h6>
+              <h6 class="modal-location">Location</h6>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <p class="modalText">Modal body text goes here.</p>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-primary createEvent">Add Event</button>
+              <button type="button" class="btn btn-primary removeEvent">Remove Event</button>
+              <button type="button" class="btn btn-secondary close" data-dismiss="modal">Close</button>
             </div>
           </div>
-        <h3 class="card-header" id="monthAndYear"></h3>
-        <table class="table table-bordered table-responsive-sm" id="calendar">
-            <thead>
-            <tr>
-                <th>Sun</th>
-                <th>Mon</th>
-                <th>Tue</th>
-                <th>Wed</th>
-                <th>Thu</th>
-                <th>Fri</th>
-                <th>Sat</th>
-            </tr>
-            </thead>
-
-            <tbody id="calendar-body">
-
-            </tbody>
-        </table>
-
-        <div class="form-inline">
-
-            <button class="btn btn-outline-primary col-sm-6" id="previous" onclick="previous()">Previous</button>
-
-            <button class="btn btn-outline-primary col-sm-6" id="next" onclick="next()">Next</button>
         </div>
-        <br/>
-        <form class="form-inline">
-            <label class="lead mr-2 ml-2" for="month">Jump To: </label>
-            <select class="form-control col-sm-4" name="month" id="month" onchange="choose()">
-                <option value=0>Jan</option>
-                <option value=1>Feb</option>
-                <option value=2>Mar</option>
-                <option value=3>Apr</option>
-                <option value=4>May</option>
-                <option value=5>Jun</option>
-                <option value=6>Jul</option>
-                <option value=7>Aug</option>
-                <option value=8>Sep</option>
-                <option value=9>Oct</option>
-                <option value=10>Nov</option>
-                <option value=11>Dec</option>
-            </select>
+      </div>
+      <!-- END OF MODAL CONTENT -->
 
 
-            <label for="year"></label><select class="form-control col-sm-4" name="year" id="year" onchange="choose()">
-           
-            <option value=2020>2020</option>
-            <option value=2021>2021</option>
-            <option value=2022>2022</option>
+      <h3 class="card-header" id="monthAndYear"></h3>
+      <table class="table table-bordered table-responsive-sm" id="calendar">
+        <thead>
+          <tr>
+            <th>Sun</th>
+            <th>Mon</th>
+            <th>Tue</th>
+            <th>Wed</th>
+            <th>Thu</th>
+            <th>Fri</th>
+            <th>Sat</th>
+          </tr>
+        </thead>
+
+        <tbody id="calendar-body">
+
+        </tbody>
+      </table>
+
+      <div class="form-inline">
+
+        <button class="btn btn-outline-primary col-sm-6" id="previous" onclick="previous()">Previous</button>
+
+        <button class="btn btn-outline-primary col-sm-6" id="next" onclick="next()">Next</button>
+      </div>
+      <br />
+      <form class="form-inline">
+        <label class="lead mr-2 ml-2" for="month">Jump To: </label>
+        <select class="form-control col-sm-4" name="month" id="month" onchange="choose()">
+          <option value=0>Jan</option>
+          <option value=1>Feb</option>
+          <option value=2>Mar</option>
+          <option value=3>Apr</option>
+          <option value=4>May</option>
+          <option value=5>Jun</option>
+          <option value=6>Jul</option>
+          <option value=7>Aug</option>
+          <option value=8>Sep</option>
+          <option value=9>Oct</option>
+          <option value=10>Nov</option>
+          <option value=11>Dec</option>
+        </select>
+
+
+        <label for="year"></label><select class="form-control col-sm-4" name="year" id="year" onchange="choose()">
+
+          <option value=2020>2020</option>
+          <option value=2021>2021</option>
+          <option value=2022>2022</option>
 
         </select></form>
     </div>
-</div>
+  </div>
 
 
-<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
-        crossorigin="anonymous"></script>
-<script src="calendar.js"></script>
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+    crossorigin="anonymous"></script>
+  <script src="calendar.js"></script>
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"
-        integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ"
-        crossorigin="anonymous"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"
-        integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm"
-        crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"
+    integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ"
+    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"
+    integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm"
+    crossorigin="anonymous"></script>
 
 
 </body>
+
 </html>
