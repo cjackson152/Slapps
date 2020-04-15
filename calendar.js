@@ -45,6 +45,7 @@ $(document).on('click', 'td', function(){
     $('.modal-body').text($(this).attr('data-todo'));
     $('.modal').attr('style', 'display:block');
     $('.modal').addClass('show');
+    $(this).add('bg-dark')
 })
 
 $(document).on('click', '.close', function(){
@@ -53,11 +54,10 @@ $(document).on('click', '.close', function(){
 })
 
 $(document).on('click', '.removeEvent', function(){
-    $('.modal-venue').text("placeholder for Venue");
-    $('.modal-location').text("placeholder for location");
-    $('.modal-body').text($(this).attr('data-todo'));
+    $('.modal-venue').text("");
+    $('.modal-location').text("");
+    $('.modal-body').text("");
     $('.modal').attr('style', 'display:block');
-    $('.modal').removeClass('show');
 })
 
 $(document).on('click', '.createEvent', function(){
