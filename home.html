@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Slapps Music Event</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.8.0/css/bulma.min.css">
+    <link rel="stylesheet" href="style.css">
+    <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
+  </head>
+  <body>
+      
+      <!--NavBar-->
+    <nav class="navbar" role="navigation" aria-label="main navigation">
+        <div class="navbar-brand">
+          <a class="navbar-item" href="home.html">
+            <img src="assets/slapps-logo.png" width="auto" height="auto"></a>
+          <a class="navbar-item" href="home.html">Home</a>
+          <a class="navbar-item" href="details.html">My Events</a>
+        </div>
+      </nav>
+    
+      <!--Search-->
+      <section class="mainBody">
+        <div class="field is-grouped searchBar">
+         <input class="input is-rounded" id="artist-input" type="text" placeholder="Enter Artist/Event Name">
+         <div class="control">
+           <button class="button is-primary searchBtn">Submit</button>
+         </div>
+        </div>
+     </section>
+
+     <section class="searchResults">
+      <div class="columns">
+            <div class="column" id="artist-upcoming">
+              <p class="bd-notification is-info"></p>
+            </div>
+          </div>
+        </div>
+        <div class="column">
+          <div class="columns is-mobile">
+            <div class="column is-one-quarter" id="artist-venue">
+              <p class="bd-notification is-danger">Venue</p>
+            </div>
+            <div class="column" id="artist-country">
+              <p class="bd-notification is-danger">Country</p>
+            </div>
+            <div class="column" id="artist-date">
+              <p class="bd-notification is-danger">Date</p>
+            </div>
+            <div class="column" id="saveBtnCol">
+              <p class="bd-notification is-danger">Save</p>
+            </div>
+          </div>
+        </div>
+      </div>
+         <!--Search Results Go Here-->
+     </section>
+     
+     
+     <!--Footer-->
+     <footer class="footer">
+        <div class="content has-text-centered">
+          <p>
+            <strong>Slapps Music Event</strong> 2020
+          </p>
+        </div>
+      </footer>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="search.js"></script>
+  </body>
+</html>
