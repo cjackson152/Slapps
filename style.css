@@ -4,10 +4,16 @@
     height: auto;
     margin: auto;
     background-color: rgba(212, 179, 148, 0.8);
+    
+    
 }
 
 .control {
     margin-left: 15px;
+}
+
+body {
+    font-family: 'Raleway', sans-serif;
 }
 
 .mainBody {
@@ -22,13 +28,15 @@
     flex-wrap: wrap;
 }
 .webpage-guide {
-    background-color: #3e759e;
+    background-color: #954343;
     color: whitesmoke;
     margin: 2rem;
 }
+   
 .webpage-guide h3 {
     color: whitesmoke;
 }
+
 
  .panel-heading{
     background-color: rgba(212, 179, 148, 0.8) ;
@@ -41,4 +49,3 @@
 footer {
     height: auto;
 }
-© 2020 GitHub, Inc.
