@@ -4,8 +4,10 @@
     height: auto;
     margin: auto;
     background-color: rgba(212, 179, 148, 0.8);
-    
-    
+}
+
+.saveBtn {
+    width: 100%;
 }
 
 .control {

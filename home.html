@@ -32,68 +32,13 @@
       <div class="field">
         <label class="label">Artist</label>
         <div class="control">
-          <input class="input is-warning" type="text" placeholder="Any">
+          <input class="input is-warning" id="artist-input" type="text" placeholder="Type your favorite Artist or Events">
         </div>
       </div>
-
-      <div class="field">
-        <label class="label">Music Genre</label>
-        <div class="control select">
-          <select class="input is-warning" name="music-genre" type="text">
-            <option>Any</option>
-            <option value="hip-hop">Hip-Hop</option>
-            <option value="RnB">Rhythm & Blues</option>
-            <option value="rap">Rap</option>
-            <option value="edm">Electronic Dance Music</option>
-            <option value="punk">Punk</option>
-            <option value="blues">Blues</option>
-            <option value="reggae">Reggae</option>
-            <option value="musical-theatre">Musical Theatre</option>
-            <option value="country">Country</option>
-            <option value="metal">Heavy Metal</option>
-          </select>
-        </div>
-      </div>
-
-      <div class="field">
-        <label class="label">Location</label>
-        <div class="control">
-          <input class="input is-warning" type="text" placeholder="City, State, Etc.">
-        </div>
-      </div>
-
-      <div class="field">
-        <label class="label">Price</label>
-        <div class="control level-left">
-          <div class="columns level-item">
-            <input class="input is-rounded is-warning is-small" type="number" min="0" name="min" placeholder="Min">
-            <input class="input is-rounded is-warning is-small" type="number" min="0" name="max" placeholder="Max">
-          </div>
-
-          <div class="field">
-            <label class="label">Date</label>
-            <div class="control select">
-              <select class="input is-warning" name="date" type="text">
-                <option>Any</option>
-                <option>January</option>
-                <option>Feburary</option>
-                <option>March</option>
-                <option>April</option>
-                <option>May</option>
-                <option>June</option>
-                <option>July</option>
-                <option>August</option>
-                <option>September</option>
-                <option>October</option>
-                <option>November</option>
-                <option>December</option>
-              </select>
-            </div>
-          </div>
 
           <div class="field is-grouped">
             <div class="control">
-              <button class="button is-link is-warning" style="font-family: 'Righteous', cursive;">Let see what's poppin'</button>
+              <button class="button is-link is-warning searchBtn" style="font-family: 'Righteous', cursive;">Let see what's poppin'</button>
             </div>
           </div>
           
@@ -167,7 +112,7 @@
       <!--Search Results Go Here-->
     </section>
 
-    <nav class="pagination is-centered" role="navigation" aria-label="pagination">
+    <!-- <nav class="pagination is-centered" role="navigation" aria-label="pagination">
       <a class="pagination-previous">Previous</a>
       <a class="pagination-next">Next page</a>
       <ul class="pagination-list">
@@ -179,7 +124,7 @@
         <li><span class="pagination-ellipsis">&hellip;</span></li>
         <li><a class="pagination-link" aria-label="Goto page 86">10</a></li>
       </ul>
-    </nav>
+    </nav> -->
 
     <!--Footer-->
     <footer class="footer">
@@ -190,7 +135,9 @@
       </div>
     </footer>
 
-    <script src="script.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="search.js"></script>
+    <!-- <script src="calendar.js"></script> -->
 </body>
 
 </html>
