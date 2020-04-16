@@ -10,6 +10,15 @@
     width: 100%;
 }
 
+.searchResults {
+    text-align: center;
+    padding: 25px;
+} 
+
+#artist-upcoming {
+    font-weight: bolder;
+    font-size: 30px;
+}
 .control {
     margin-left: 15px;
 }
