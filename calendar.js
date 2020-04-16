@@ -61,6 +61,7 @@ $(document).on('click', '.removeEvent', 'td', function(){
     $('.modal-location').text("");
     $('.modal-body').text("");
     $('.modal').attr('style', 'display:block');
+    //functions if cell is removed, but doesnt function properly, currently removes all color from the calendar
     $('td', cell).removeClass('bg-success');
 })
 
