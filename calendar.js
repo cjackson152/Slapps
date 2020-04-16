@@ -61,7 +61,7 @@ $(document).on('click', '.removeEvent', 'td', function(){
     $('.modal-location').text("");
     $('.modal-body').text("");
     $('.modal').attr('style', 'display:block');
-    $('td').removeClass('bg-success');
+    $('td', cell).removeClass('bg-success');
 })
 
 $(document).on('click', '.createEvent', 'td', function(){
@@ -69,7 +69,7 @@ $(document).on('click', '.createEvent', 'td', function(){
     $('.modal-venue').text(prompt("Whats the Venue name?"));
     $('.modal-location').text(prompt("Wheres it at?"));
     $('.modal-body').text(prompt("What are you doing?"));
-    $('td').addClass('bg-success');
+    $('td', cell).addClass('bg-success');
 })
 
 // this currently works but removes the color from other dates marked important
