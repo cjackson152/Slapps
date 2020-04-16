@@ -81,6 +81,21 @@ $(document).on('mouseout', 'td', function(){
     $(this).removeClass('bg-info')
 })
 
+//code thought for events
+/*
+if(eventList === cell){
+    cell.classList.add('bg-info');
+    $('.eventTitle').text(date, eventList);
+    $('.modal-venue').text(date, venueList);
+    $('.modal-location').text(date, locationList);
+    $('.modal-body').text(date, eventInfo);
+}
+
+
+
+
+*/
+
 //generates calendar
 function showCalendar(month, year) {
 
@@ -121,7 +136,7 @@ for (let a = 0; a < 7; a++) {
         
         //this is the code that causes the highlighting didnt realize it was still here
         if (date === today.getDate() && year === today.getFullYear() && month === today.getMonth()){
-            cell.classList.add("bg-info");
+            cell.classList.add("bg-primary");
         }
         cell.appendChild(cellText);
         row.appendChild(cell);
