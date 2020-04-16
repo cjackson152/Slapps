@@ -4,7 +4,7 @@ currentMonth = today.getMonth();
 currentYear = today.getFullYear();
 selectYear = document.getElementById("year");
 selectMonth = document.getElementById("month");
-
+eventDay = document.querySelector("eventList")
 //variables for popup on date
 popup = $("#modal");
 closeModal = document.querySelector(".closeModal")
@@ -45,13 +45,15 @@ $(document).on('click', 'td', function(){
     $('.modal-body').text($(this).attr('data-todo'));
     $('.modal').attr('style', 'display:block');
     $('.modal').addClass('show');
-    $(this).add('bg-dark')
 })
 
 $(document).on('click', '.close', function(){
     $('.modal').attr('style', 'display:none');
     $('.modal').removeClass('show');
 })
+
+
+
 
 $(document).on('click', '.removeEvent', function(){
     $('.eventTitle').text("")
@@ -66,7 +68,7 @@ $(document).on('click', '.createEvent', function(){
     $('.modal-venue').text(prompt("Whats the Venue name?"));
     $('.modal-location').text(prompt("Wheres it at?"));
     $('.modal-body').text(prompt("What are you doing?"));
-    
+    $(cell, this).addClass('bg-info')
 })
 //generates calendar
 function showCalendar(month, year) {
