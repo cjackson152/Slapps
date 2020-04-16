@@ -45,15 +45,15 @@ $(document).on('click', 'td', function(){
     $('.modal-body').text($(this).attr('data-todo'));
     $('.modal').attr('style', 'display:block');
     $('.modal').addClass('show');
+    // the code to change the color of the correct cell needs further expanding so its only on if event is there
+    $(this).addClass('bg-info')
+
 })
 
 $(document).on('click', '.close', function(){
     $('.modal').attr('style', 'display:none');
     $('.modal').removeClass('show');
 })
-
-
-
 
 $(document).on('click', '.removeEvent', function(){
     $('.eventTitle').text("")
@@ -68,8 +68,19 @@ $(document).on('click', '.createEvent', function(){
     $('.modal-venue').text(prompt("Whats the Venue name?"));
     $('.modal-location').text(prompt("Wheres it at?"));
     $('.modal-body').text(prompt("What are you doing?"));
-    $(cell, this).addClass('bg-info')
 })
+
+// this currently works but removes the color from other dates marked important
+// need to write event check that supercedes mouseout event
+// ask ta
+$(document).on('mouseover', 'td',  function(){
+    $(this).addClass('bg-info')
+})
+
+$(document).on('mouseout', 'td', function(){
+    $(this).removeClass('bg-info')
+})
+
 //generates calendar
 function showCalendar(month, year) {
 
