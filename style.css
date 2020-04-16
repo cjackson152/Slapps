@@ -1,13 +1,27 @@
 .searchCard {
     width: 75vw;
-    padding: 10px;
+    padding: 25px;
     height: auto;
     margin: auto;
     background-color: rgba(212, 179, 148, 0.8);
 }
 
+.saveBtn {
+    width: 100%;
+}
+
 .control {
     margin-left: 15px;
+}
+
+body {
+    font-family: 'Raleway', sans-serif;
+}
+
+.searchButton {
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .mainBody {
@@ -22,10 +36,15 @@
     flex-wrap: wrap;
 }
 .webpage-guide {
-    background-color: #3e759e;
+    background-color: #954343;
     color: whitesmoke;
-    margin: 2rem;
+    padding-top: 50px;
 }
+   
+.webpage-guide h2 {
+    padding-top: 20px;
+}
+
 .webpage-guide h3 {
     color: whitesmoke;
 }
