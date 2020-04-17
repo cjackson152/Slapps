@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Slapps Music Event</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.8.0/css/bulma.min.css">
+  <link rel="stylesheet" href="style.css">
+  <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Raleway&family=Righteous&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+  <!--NavBar-->
+  <nav class="navbar" role="navigation" aria-label="main navigation">
+    <div class="navbar-brand">
+      <a class="navbar-item" href="home.html">
+        <img src="assets/slapps-logo.png" width="auto" height="auto"></a>
+      <a class="navbar-item">Home</a>
+      <a class="navbar-item" href="calendar.html">My Events</a>
+    </div>
+  </nav>
+
+  <!--Search-->
+  <div class="tile is-parent mainBody">
+    <article class="tile is-child notification is-8 searchCard">
+      <h3 class="title" style="font-family: 'Righteous', cursive; text-align: center;">Search For Events</h3>
+
+      <div class="field">
+        <label class="label" style="color: white; text-align: center;">Search for your Favorite Aritst or Event</label>
+        <div class="control">
+          <input class="input is-warning" id="artist-input" type="text" placeholder="Type your favorite Artist or Events">
+        </div>
+      </div>
+
+          <div class="field is-grouped">
+            <div class="control">
+              <button class="button is-link is-warning searchBtn" style="font-family: 'Righteous', cursive;">Let see what's poppin'</button>
+            </div>
+          </div>
+          
+    </article>
+  </div>
+  <!--END OF SEARCH -->
+
+  <div class="hero tile is-parent webpage-guide">
+
+    <h2 class=" title is-medium has-text-centered" style="color: whitesmoke; font-family: 'Righteous', cursive;">Search, Explore, Manage</h2>
+
+    <div class="hero-body level">
+      <div class="column has-text-centered">
+        <h3 class="subtitle is-3" style="font-family: 'Righteous', cursive;">Search </h3>
+        <span class="icon is-large has-text-warning ">
+          <i class="fas fa-3x fa-search"></i>
+        </span>
+        <p>Search Music Events to your own personal taste & convenience.</p>
+      </div>
+
+      <div class="column has-text-centered">
+        <h3 class="subtitle is-3" style="font-family: 'Righteous', cursive;">Explore the Music World</h3>
+        <span class="icon has-text-warning">
+          <i class="fas fa-3x fa-music"></i>
+        </span>
+        <p>Explore detailed Music Events to decide if there are any you are interested in going to. See something you
+          like?
+          Add it to your own Event Calendar!</p>
+      </div>
+
+      <div class="column has-text-centered">
+        <h3 class="subtitle is-3" style="font-family: 'Righteous', cursive;">Manage Your Events</h3>
+        <span class="icon has-text-warning">
+          <i class="fas fa-3x fa-calendar"></i>
+        </span>
+        <p>Add or remove any events to your own calendar. Look back at any events you went to, and get excited about any
+          events you have coming up!</p>
+      </div>
+    </div>
+  </div>
+
+  <!--Search Results Go Here-->
+  <article class="panel">
+    <p class="panel-heading" style="font-family: 'Righteous', cursive;">Here's What We Found</p>
+    <section class="searchResults">
+      <div class="columns">
+        <div class="column" id="artist-upcoming">
+          <p class="bd-notification is-info"></p>
+        </div>
+          <div class="similar">
+            <!--Similar Artist go here-->
+          </div>
+      </div>
+
+      <div class="column event-info">
+        <div class="columns is-mobile">
+          <div class="column is-one-quarter" id="artist-venue">
+            <p class="bd-notification is-danger">Venue</p>
+          </div>
+          <div class="column" id="artist-country">
+            <p class="bd-notification is-danger">Location</p>
+          </div>
+          <div class="column" id="artist-date">
+            <p class="bd-notification is-danger">Date</p>
+          </div>
+          <div class="column" id="saveBtnCol">
+            <p class="bd-notification is-danger">Save</p>
+          </div>
+        </div>
+      </div>
+    </section>
+    </article>
+
+    <!--Footer-->
+    <footer class="footer">
+      <div class="content has-text-centered">
+        <p>
+          <strong>Slapps Music Event</strong> 2020
+        </p>
+      </div>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="search.js"></script>
+    <!-- <script src="calendar.js"></script> -->
+</body>
+
+</html>

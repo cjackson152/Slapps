@@ -1,46 +1,19 @@
 .searchCard {
     width: 75vw;
-    padding: 25px;
+    padding: 10px;
     height: auto;
     margin: auto;
     background-color: rgba(212, 179, 148, 0.8);
+    
+    
 }
 
-.saveBtn {
-    width: 100%;
-    background-color: aqua;
-}
-
-.searchResults {
-    text-align: center;
-    padding: 10px;
-}
-
-.resultsRow {
-    align-items: center;
-    padding-top: 10px;
-    padding-bottom: 10px;
-    font-size: 10px;
-    font-family: Helvetica, sans-serif;
-    font-stretch: extra-condensed;
-}
-
-#artist-upcoming {
-    font-weight: bolder;
-    font-size: 25px;
-}
 .control {
     margin-left: 15px;
 }
 
 body {
     font-family: 'Raleway', sans-serif;
-}
-
-.searchButton {
-    display: flex;
-    align-items: center;
-    justify-content: center;
 }
 
 .mainBody {
@@ -57,16 +30,13 @@ body {
 .webpage-guide {
     background-color: #954343;
     color: whitesmoke;
-    padding-top: 50px;
+    margin: 2rem;
 }
    
-.webpage-guide h2 {
-    padding-top: 20px;
-}
-
 .webpage-guide h3 {
     color: whitesmoke;
 }
+
 
  .panel-heading{
     background-color: rgba(212, 179, 148, 0.8) ;
