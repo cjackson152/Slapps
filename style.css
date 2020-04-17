@@ -8,16 +8,26 @@
 
 .saveBtn {
     width: 100%;
+    background-color: aqua;
 }
 
 .searchResults {
     text-align: center;
-    padding: 25px;
-} 
+    padding: 10px;
+}
+
+.resultsRow {
+    align-items: center;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    font-size: 10px;
+    font-family: Helvetica, sans-serif;
+    font-stretch: extra-condensed;
+}
 
 #artist-upcoming {
     font-weight: bolder;
-    font-size: 30px;
+    font-size: 25px;
 }
 .control {
     margin-left: 15px;

@@ -14,29 +14,42 @@ function artistResult(artist) {
         // venueVal = response[0].venue.name;
         // countryVal = response[0].venue.country;
         // dateVal = response[0].dateTime;
-
-        artistName = $("<p>").text("Upcoming Events for " + artist)
         
-        $("#artist-upcoming").empty();
-        $("#artist-upcoming").append(artistName)
-
         let arr = [];
+
+        // error message if no upcoming events are available.
+        if (response.length === 0) {
+            noEvents = $("<p>").text("Oops, it looks like " + artist + " is in quarantine and have no upcoming events")
+            $("#artist-upcoming").empty();
+            searchArtist(artist)
+            $("#artist-upcoming").append(noEvents)
+        }
+        else {
+            artistName = $("<p>").text("Upcoming Events for " + artist)
+            $("#artist-upcoming").empty();
+            $("#artist-upcoming").append(artistName)
+        }
+
         // first start from array of most recently ended events
         for (var i = response.length - 1; i > 0; i--) {
             // if (Array)
-
                 if (i === response.length - 10) { break; }
+
                 arr.push(response[i]);
+
                 // dateTime = response[i].datetime;
                 // dateOnly = dateTime.slice(0,9)
     
                 var buttons = $('<button>'+ "Save" + '</button>')
-                buttons.addClass("saveBtn") 
+                buttons.addClass("saveBtn resultsRow") 
                 buttons.appendTo('#saveBtnCol'); 
     
                 countryCol = $("<p>").text(response[i].venue.country)
+                countryCol.addClass("resultsRow")
                 venueCol = $("<p>").text(response[i].venue.name)
+                venueCol.addClass("resultsRow")
                 dateCol = $("<p>").text(response[i].datetime.slice(0,10))
+                dateCol.addClass("resultsRow")
     
                 $("#artist-country").append(countryCol)
                 $("#artist-venue").append(venueCol)
@@ -47,8 +60,52 @@ function artistResult(artist) {
       });
     }
 
+
+    //click event for search
 $(".searchBtn").on("click", function(event) {
     event.preventDefault();
     inputArtist = $("#artist-input").val().trim();
+    scrollDown()
     artistResult(inputArtist);
     });
+
+
+     //scrolls user to the bottom of the page after clicking search
+function scrollDown() {
+    window.scrollBy(0, 1500);
+}
+
+     //searches artist id from songkick API using aritst input
+function searchArtist(artist) {
+    var queryURL = "https://api.songkick.com/api/3.0/search/artists.json?apikey=gy9d7Sa5j6mnCzMt&query= " + artist + "";
+        $.ajax({
+        url: queryURL,
+        method: "GET"
+    })
+    .then(function(response) {
+      console.log(response)
+      id = response.resultsPage.results.artist[0].id
+      similarArtist(id)
+  });
+}
+
+    //grabs the ID and uses it to find similar artist WHEN there are NO UPCOMING EVENTS
+function similarArtist(artistID) {
+
+    var queryURL = "https://api.songkick.com/api/3.0/artists/" + artistID + "/similar_artists.json?apikey=gy9d7Sa5j6mnCzMt";
+
+    $.ajax({
+      url: queryURL,
+      method: "GET"
+    })
+      .then(function(response) {
+        let simArr = []; 
+        console.log(response)
+        for (var r = 0; r < response.length; r++) {
+            // if (Array)
+                if (r === response.length - 3) { break; }
+
+                simArr.push(response[r]);
+        }
+    });
+}
