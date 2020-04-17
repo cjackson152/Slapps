@@ -81,7 +81,6 @@ $(document).on('click', '.createEvent', 'td', function(e){
     // $('.modal-venue').text(whatVenue);
     // $('.modal-location').text(whatLocation);
     // $('.modal-body').text(whatInfo);
-    e.target.classList.add('bg-success');
     let temp = {
         title: whatEvent,
         venue: whatVenue,
