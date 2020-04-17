@@ -4,7 +4,7 @@ currentMonth = today.getMonth();
 currentYear = today.getFullYear();
 selectYear = document.getElementById("year");
 selectMonth = document.getElementById("month");
-
+eventDay = document.querySelector("eventList")
 //variables for popup on date
 popup = $("#modal");
 closeModal = document.querySelector(".closeModal")
@@ -40,12 +40,15 @@ function choose() {
 // function to click tds through calendar
 $(document).on('click', 'td', function(){
     $('.modal-title').text((currentMonth + 1) + "/" + $(this).text() + "/" + currentYear);
+    $('.eventTitle').text("")
     $('.modal-venue').text("");
     $('.modal-location').text("");
     $('.modal-body').text($(this).attr('data-todo'));
     $('.modal').attr('style', 'display:block');
     $('.modal').addClass('show');
-    $(this).add('bg-dark')
+    // the code to change the color of the correct cell needs further expanding so its only on if event is there
+    $(this).addClass('bg-success')
+
 })
 
 $(document).on('click', '.close', function(){
@@ -53,21 +56,55 @@ $(document).on('click', '.close', function(){
     $('.modal').removeClass('show');
 })
 
-$(document).on('click', '.removeEvent', function(){
+$(document).on('click', '.removeEvent', 'td', function(){
     $('.eventTitle').text("")
     $('.modal-venue').text("");
     $('.modal-location').text("");
     $('.modal-body').text("");
     $('.modal').attr('style', 'display:block');
+    //functions if cell is removed, but doesnt function properly, currently removes all color from the calendar
+    $('td', cell.cellList).removeClass('bg-success');
 })
 
-$(document).on('click', '.createEvent', function(){
-    $('.eventTitle').text(prompt("Whats the Event?"));
-    $('.modal-venue').text(prompt("Whats the Venue name?"));
-    $('.modal-location').text(prompt("Wheres it at?"));
-    $('.modal-body').text(prompt("What are you doing?"));
-    
+
+$(document).on('click', '.createEvent', 'td', function(){
+    let whatEvent = prompt("Whats the Event?")
+    let whatVenue = prompt("Whats the venue name?")
+    let whatLocation = prompt("Wheres it at?")
+    let whatInfo = prompt("What are you doing?")
+    $('.eventTitle').text(whatEvent);
+    $('.modal-venue').text(whatVenue);
+    $('.modal-location').text(whatLocation);
+    $('.modal-body').text(whatInfo);
+    $('td', cell).addClass('bg-success');
 })
+
+// this currently works but removes the color from other dates marked important
+// need to write event check that supercedes mouseout event
+// ask ta
+$(document).on('mouseover', 'td',  function(){
+    $(this).addClass('bg-info')
+})
+
+$(document).on('mouseout', 'td', function(){
+    $(this).removeClass('bg-info')
+})
+
+//code thought for events
+/*
+if(eventList === cell){
+    cell.classList.add('bg-info');
+    $('.eventTitle').text(date, eventList);
+    $('.modal-venue').text(date, venueList);
+    $('.modal-location').text(date, locationList);
+    $('.modal-body').text(date, eventInfo);
+}
+
+
+
+
+*/
+
 //generates calendar
 function showCalendar(month, year) {
 
@@ -108,7 +145,7 @@ for (let a = 0; a < 7; a++) {
         
         //this is the code that causes the highlighting didnt realize it was still here
         if (date === today.getDate() && year === today.getFullYear() && month === today.getMonth()){
-            cell.classList.add("bg-info");
+            cell.classList.add("bg-primary");
         }
         cell.appendChild(cellText);
         row.appendChild(cell);
