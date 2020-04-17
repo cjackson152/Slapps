@@ -99,13 +99,30 @@ function similarArtist(artistID) {
       method: "GET"
     })
       .then(function(response) {
-        let simArr = []; 
-        console.log(response)
-        for (var r = 0; r < response.length; r++) {
+        resultsArtist = response.resultsPage.results.artist
+        console.log(resultsArtist)
+        for (var r = 0; r < resultsArtist.length; r++) {
             // if (Array)
-                if (r === response.length - 3) { break; }
+            if (r === 3) { break; }
+            // console.log(response)
+            
+            // similarName = $("<button></button>").text(resultsArtist[r].displayName)
+            
+            // $(".similar").append(similarName)
 
-                simArr.push(response[r]);
+           similarBtn = $('<button>'+ resultsArtist[r].displayName + '</button>')
+           similarBtn.addClass("similarButton").val(resultsArtist[r].displayName)
+           similarBtn.appendTo('.similar'); 
         }
     });
 }
+
+
+// click to display upcoming shows from similar artist
+
+
+$(".similarButton").on("click", function(event) {
+    similarResults = $(this).attr("value");
+    scrollDown()
+    artistResult(similarResults);
+    });
