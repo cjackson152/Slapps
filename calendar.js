@@ -48,7 +48,7 @@ $(document).on('click', 'td', function(e){
     $('.eventTitle').text(todos[editing] ? todos[editing].title : '')
     $('.modal-venue').text(todos[editing] ? todos[editing].venue : '');
     $('.modal-location').text(todos[editing] ? todos[editing].location : '');
-    $('.modal-body').text($(this).attr('data-todo'));
+    $('.modal-body').text(todos[editing] ? todos[editing].info : '');
     $('.modal').attr('style', 'display:block');
     $('.modal').addClass('show');
     // the code to change the color of the correct cell needs further expanding so its only on if event is there
