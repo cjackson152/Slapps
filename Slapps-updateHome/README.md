@@ -1,2 +1,0 @@
-# Slapps
-Music Event Site
