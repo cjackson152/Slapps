@@ -64,6 +64,16 @@ $(".searchBtn").on("click", function(event) {
     scrollDown()
     artistResult(inputArtist);
     });
+$(".saveBtn").on('click', function(save){
+    let cats = {
+        venue: artist-venue,
+        location: artist-country,
+        
+    }
+    todos[editing] = cats
+    localStorage.setItem('todos', JSON.stringify(todos))
+    
+})
 
      //scrolls user to the bottom of the page after clicking search
 function scrollDown() {
