@@ -11,8 +11,9 @@ closeModal = document.querySelector(".closeModal");
 let editing
 //Month Names for display
 months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+const todos = localStorage.getItem('todos') ? JSON.parse(localStorage.getItem('todos')) : {}
+//{
 
-//
 monthAndYear = document.getElementById("monthAndYear");
 showCalendar(currentMonth, currentYear);
 
@@ -44,9 +45,9 @@ $(document).on('click', 'td', function(e){
     $('.modal-location').text('');
     editing = $(this).text()
     $('.modal-title').text((currentMonth + 1) + "/" + $(this).text() + "/" + currentYear);
-    $('.eventTitle').text($(this).attr('data-event'))
-    $('.modal-venue').text($(this).attr('data-venue'));
-    $('.modal-location').text($(this).attr('data-location'));
+    $('.eventTitle').text(todos[editing] ? todos[editing].title : '')
+    $('.modal-venue').text(todos[editing] ? todos[editing].venue : '');
+    $('.modal-location').text(todos[editing] ? todos[editing].location : '');
     $('.modal-body').text($(this).attr('data-todo'));
     $('.modal').attr('style', 'display:block');
     $('.modal').addClass('show');
@@ -75,21 +76,20 @@ $(document).on('click', '.createEvent', 'td', function(e){
     let whatVenue = prompt("Whats the venue name?")
     let whatLocation = prompt("Wheres it at?")
     let whatInfo = prompt("What are you doing?")
-    window.localStorage.setItem('data-event', whatEvent)
-    window.localStorage.setItem('data-venue', whatVenue)
-    window.localStorage.setItem('data-location', whatLocation)
-    window.localStorage.setItem('data-info', whatInfo)
+
     // $('.eventTitle').text(whatEvent);
     // $('.modal-venue').text(whatVenue);
     // $('.modal-location').text(whatLocation);
     // $('.modal-body').text(whatInfo);
     e.target.classList.add('bg-success');
-    let temp = $(`#data${editing}`);
-    temp.attr('data-event', whatEvent);
-    temp.attr('data-venue', whatVenue);
-    temp.attr('data-location', whatLocation);
-    temp.attr('data-info', whatInfo);
-    console.log($('td'));
+    let temp = {
+        title: whatEvent,
+        venue: whatVenue,
+        location: whatLocation,
+        info: whatInfo
+    }
+    todos[editing] = temp
+    localStorage.setItem('todos', JSON.stringify(todos))
 })
 
 // this currently works but removes the color from other dates marked important
@@ -154,8 +154,9 @@ for (let a = 0; a < 7; a++) {
     else {
         cell = document.createElement("td");
         cellText = document.createTextNode(date);
-        cell.setAttribute('id', `data${date}`)
-        cell.setAttribute('data-todo', '')
+        cell.setAttribute('id', `data${date}`);
+        cell.setAttribute('data-todo', '');
+        todos[date] ? cell.classList.add("bg-success") : ''
         
         //this is the code that causes the highlighting didnt realize it was still here
         if (date === today.getDate() && year === today.getFullYear() && month === today.getMonth()){
