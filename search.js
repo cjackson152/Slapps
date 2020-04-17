@@ -10,10 +10,6 @@ function artistResult(artist) {
     })
       .then(function(response) {
         console.log(response)
-
-        // venueVal = response[0].venue.name;
-        // countryVal = response[0].venue.country;
-        // dateVal = response[0].dateTime;
         
         let arr = [];
 
@@ -61,7 +57,6 @@ function artistResult(artist) {
       });
     }
 
-
     //click event for search
 $(".searchBtn").on("click", function(event) {
     event.preventDefault();
@@ -69,7 +64,6 @@ $(".searchBtn").on("click", function(event) {
     scrollDown()
     artistResult(inputArtist);
     });
-
 
      //scrolls user to the bottom of the page after clicking search
 function scrollDown() {
@@ -106,10 +100,10 @@ function similarArtist(artistID) {
             // if (Array)
             if (r === 3) { break; }
             // console.log(response)
-            
             // similarName = $("<button></button>").text(resultsArtist[r].displayName)
-            
             // $(".similar").append(similarName)
+
+            //creates buttons for the top 3 similar artist
 
            similarBtn = $('<button>'+ resultsArtist[r].displayName + '</button>')
            similarBtn.addClass("similarButton").val(resultsArtist[r].displayName)
@@ -121,9 +115,8 @@ function similarArtist(artistID) {
 
 // click to display upcoming shows from similar artist
 
-
-$(".similarButton").on("click", function(event) {
-    similarResults = $(this).attr("value");
-    scrollDown()
-    artistResult(similarResults);
-    });
+    $(document).on("click", ".similarButton" , function() {
+        similarResults = $(this).attr("value");
+        console.log(similarResults);
+        artistResult(similarResults);
+    })
