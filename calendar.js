@@ -40,6 +40,7 @@ function choose() {
 // function to click tds through calendar
 $(document).on('click', 'td', function(){
     $('.modal-title').text((currentMonth + 1) + "/" + $(this).text() + "/" + currentYear);
+    $('.eventTitle').text("")
     $('.modal-venue').text("");
     $('.modal-location').text("");
     $('.modal-body').text($(this).attr('data-todo'));
@@ -62,14 +63,19 @@ $(document).on('click', '.removeEvent', 'td', function(){
     $('.modal-body').text("");
     $('.modal').attr('style', 'display:block');
     //functions if cell is removed, but doesnt function properly, currently removes all color from the calendar
-    $('td', cell).removeClass('bg-success');
+    $('td', cell.cellList).removeClass('bg-success');
 })
 
+
 $(document).on('click', '.createEvent', 'td', function(){
-    $('.eventTitle').text(prompt("Whats the Event?"));
-    $('.modal-venue').text(prompt("Whats the Venue name?"));
-    $('.modal-location').text(prompt("Wheres it at?"));
-    $('.modal-body').text(prompt("What are you doing?"));
+    let whatEvent = prompt("Whats the Event?")
+    let whatVenue = prompt("Whats the venue name?")
+    let whatLocation = prompt("Wheres it at?")
+    let whatInfo = prompt("What are you doing?")
+    $('.eventTitle').text(whatEvent);
+    $('.modal-venue').text(whatVenue);
+    $('.modal-location').text(whatLocation);
+    $('.modal-body').text(whatInfo);
     $('td', cell).addClass('bg-success');
 })
 
